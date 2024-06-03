@@ -1,0 +1,29 @@
+{
+  "name": "@repo/flow-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "@connectrpc/connect": "^1.4.0",
+    "@connectrpc/connect-express": "^1.4.0",
+    "@repo/proto": "*",
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "swagger-ui-express": "^5.0.1",
+    "tsx": "^4.8.2"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "*",
+    "@repo/config-typescript": "*",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "@types/swagger-ui-express": "^4.1.6",
+    "nodemon": "^3.1.2",
+    "typescript": "^5.3.3"
+  }
+}
