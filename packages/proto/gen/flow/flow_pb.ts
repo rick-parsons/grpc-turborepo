@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import { User } from "../user/user_pb.js";
 
 /**
  * @generated from message Flow
@@ -105,6 +106,13 @@ export class GetByIdResponse extends Message<GetByIdResponse> {
    */
   flow?: Flow;
 
+  /**
+   * user object
+   *
+   * @generated from field: User user = 2;
+   */
+  user?: User;
+
   constructor(data?: PartialMessage<GetByIdResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -114,6 +122,7 @@ export class GetByIdResponse extends Message<GetByIdResponse> {
   static readonly typeName = "GetByIdResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "flow", kind: "message", T: Flow },
+    { no: 2, name: "user", kind: "message", T: User },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetByIdResponse {

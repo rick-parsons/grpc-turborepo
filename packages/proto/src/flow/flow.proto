@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "gnostic/openapi/v3/annotations.proto";
+import "user/user.proto";
 
 option (gnostic.openapi.v3.document) = {
   components: {
@@ -32,6 +33,7 @@ message GetByIdRequest {
 
 message GetByIdResponse {
   Flow flow = 1; // flow object
+  User user = 2; // user object
 }
 
 // flow service

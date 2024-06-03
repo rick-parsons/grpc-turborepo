@@ -7,6 +7,55 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message User
+ */
+export class User extends Message<User> {
+  /**
+   * @generated from field: int32 id = 1;
+   */
+  id = 0;
+
+  /**
+   * @generated from field: string email = 2;
+   */
+  email = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  constructor(data?: PartialMessage<User>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "User";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): User {
+    return new User().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean {
+    return proto3.util.equals(User, a, b);
+  }
+}
+
+/**
  * @generated from message GetRequest
  */
 export class GetRequest extends Message<GetRequest> {
@@ -48,19 +97,9 @@ export class GetRequest extends Message<GetRequest> {
  */
 export class GetResponse extends Message<GetResponse> {
   /**
-   * @generated from field: int32 id = 1;
+   * @generated from field: User user = 1;
    */
-  id = 0;
-
-  /**
-   * @generated from field: string email = 2;
-   */
-  email = "";
-
-  /**
-   * @generated from field: string name = 3;
-   */
-  name = "";
+  user?: User;
 
   constructor(data?: PartialMessage<GetResponse>) {
     super();
@@ -70,9 +109,7 @@ export class GetResponse extends Message<GetResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "GetResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "user", kind: "message", T: User },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetResponse {

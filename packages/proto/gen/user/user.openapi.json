@@ -57,6 +57,16 @@
       "GetResponse": {
         "type": "object",
         "properties": {
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "title": "GetResponse",
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
           "id": {
             "type": "integer",
             "title": "id",
@@ -73,7 +83,7 @@
             "additionalProperties": false
           }
         },
-        "title": "GetResponse",
+        "title": "User",
         "additionalProperties": false
       },
       "connect.error": {

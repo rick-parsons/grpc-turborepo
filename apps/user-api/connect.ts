@@ -5,9 +5,11 @@ export default (router: ConnectRouter) =>
   router.service(UserService, {
     async get(req) {
       return {
-        id: req.id,
-        email: "test@test.com",
-        name: "Test User",
+        user: {
+          id: req.id,
+          email: "test@test.com",
+          name: "Test User",
+        },
       };
     },
   });

@@ -83,9 +83,34 @@
         "properties": {
           "flow": {
             "$ref": "#/components/schemas/Flow"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
           }
         },
         "title": "GetByIdResponse",
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "id",
+            "additionalProperties": false
+          },
+          "email": {
+            "type": "string",
+            "title": "email",
+            "additionalProperties": false
+          },
+          "name": {
+            "type": "string",
+            "title": "name",
+            "additionalProperties": false
+          }
+        },
+        "title": "User",
         "additionalProperties": false
       },
       "connect.error": {

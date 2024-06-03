@@ -3,18 +3,23 @@ import "./styles.css";
 
 import { FlowService } from "@repo/proto/flow/flow_connect.ts";
 import { Flow } from "@repo/proto/flow/flow_pb.ts";
+import { User } from "@repo/proto/user/user_pb.ts";
 import { useClient } from "../hooks/useClient";
 
 function App(): JSX.Element {
   const client = useClient(FlowService);
   const [flow, setFlow] = useState<Flow>();
+  const [user, setUser] = useState<User>();
 
   async function logMessage(): Promise<void> {
     client
       .getById({
         id: 1,
       })
-      .then(({ flow }) => setFlow(flow));
+      .then(({ flow, user }) => {
+        setFlow(flow);
+        setUser(user);
+      });
   }
 
   return (
@@ -40,6 +45,7 @@ function App(): JSX.Element {
         <>
           <p>id: {flow?.id}</p>
           <p>name: {flow?.name}</p>
+          <p>user: {user?.email}</p>
         </>
       )}
     </div>
