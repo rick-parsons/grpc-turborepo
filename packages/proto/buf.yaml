@@ -1,0 +1,17 @@
+version: v2
+modules:
+  - path: src
+deps:
+  - buf.build/gnostic/gnostic
+  # - buf.build/protocolbuffers/wellknowntypes
+  # - buf.build/bufbuild/protovalidate
+  # - buf.build/googleapis/googleapis
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_DEFINED
+    - PACKAGE_SAME_DIRECTORY
+breaking:
+  use:
+    - FILE

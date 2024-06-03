@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "gnostic/openapi/v3/annotations.proto";
+
+option (gnostic.openapi.v3.document) = {
+  components: {
+    security_schemes: {
+      additional_properties: [
+        {
+          name: "BasicAuth";
+          value: {
+            security_scheme: {
+              type: "http";
+              scheme: "bearer";
+            }
+          }
+        }
+      ]
+    }
+  }
+};
+
+message Flow {
+  int32 id = 1;
+  string name = 2;
+  optional string description = 3;
+}
+
+message GetByIdRequest {
+  int32 id = 1; // unique flow identifier
+} 
+
+message GetByIdResponse {
+  Flow flow = 1; // flow object
+}
+
+// flow service
+service FlowService {
+  // get flow by id
+  rpc GetById(GetByIdRequest) returns (GetByIdResponse) {}
+}

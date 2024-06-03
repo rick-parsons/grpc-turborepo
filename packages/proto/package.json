@@ -1,0 +1,22 @@
+{
+  "name": "@repo/proto",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    "./*": "./gen/*"
+  },
+  "scripts": {
+    "dev": "chokidar '**/*.proto' -c 'npm run build'",
+    "build": "make run",
+    "lint": "make proto-check",
+    "clean": "make clean"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "*",
+    "@repo/config-typescript": "*",
+    "chokidar-cli": "^3.0.0",
+    "typescript": "^5.3.3"
+  }
+}

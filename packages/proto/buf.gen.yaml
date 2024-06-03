@@ -1,0 +1,11 @@
+version: v2
+plugins:
+  - remote: buf.build/connectrpc/es:v1.4.0
+    out: gen
+    opt: target=ts
+  - remote: buf.build/bufbuild/es
+    out: gen
+    opt: target=ts
+  - local: protoc-gen-connect-openapi
+    out: gen
+    opt: format=json
