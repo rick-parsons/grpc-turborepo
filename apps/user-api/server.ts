@@ -4,6 +4,7 @@ import cors from "cors";
 import { cors as connectCors } from "@connectrpc/connect";
 import { expressConnectMiddleware } from "@connectrpc/connect-express";
 import routes from "./connect";
+import { logger } from "./interceptors/logger";
 import swaggerUi from "swagger-ui-express";
 import docsJson from "@repo/proto/user/user.openapi.json";
 
@@ -21,8 +22,13 @@ app.use(cors(corsOptions));
 app.use(
   expressConnectMiddleware({
     routes,
+    interceptors: [logger],
   })
 );
+
+app.get("/test", function (req, res) {
+  res.status(410).send({ message: "This is a test" });
+});
 
 http.createServer(app).listen({ host: "localhost", port: PORT });
 console.log(`The app is running on http://localhost:${PORT}`);
