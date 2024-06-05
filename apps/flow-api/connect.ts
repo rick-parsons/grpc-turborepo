@@ -1,7 +1,7 @@
 import type { ConnectRouter } from "@connectrpc/connect";
-import { FlowService } from "@repo/proto/flow/flow_connect.ts";
+import { FlowService } from "@repo/proto/gen/flow/flow_connect";
 import { userClient } from "./client";
-import { Status } from "@repo/proto/flow/flow_pb.ts";
+import { Status } from "@repo/proto/gen/flow/flow_pb";
 
 export default (router: ConnectRouter) =>
   router.service(FlowService, {

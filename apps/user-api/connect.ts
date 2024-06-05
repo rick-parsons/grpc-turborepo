@@ -1,5 +1,5 @@
 import type { ConnectRouter } from "@connectrpc/connect";
-import { UserService } from "@repo/proto/user/user_connect.ts";
+import { UserService } from "@repo/proto/gen/user/user_connect";
 
 export default (router: ConnectRouter) =>
   router.service(UserService, {

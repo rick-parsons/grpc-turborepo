@@ -1,5 +1,5 @@
 import { createPromiseClient } from "@connectrpc/connect";
-import { UserService } from "@repo/proto/user/user_connect.ts";
+import { UserService } from "@repo/proto/gen/user/user_connect";
 import { createConnectTransport } from "@connectrpc/connect-node";
 
 const transport = createConnectTransport({

@@ -4,9 +4,6 @@
   "private": true,
   "license": "MIT",
   "sideEffects": false,
-  "exports": {
-    "./*": "./gen/*"
-  },
   "scripts": {
     "dev": "chokidar '**/*.proto' -c 'npm run build'",
     "build": "make run",

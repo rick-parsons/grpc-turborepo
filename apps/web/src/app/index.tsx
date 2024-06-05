@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-import { FlowService } from "@repo/proto/flow/flow_connect.ts";
-import { Flow, Status } from "@repo/proto/flow/flow_pb.ts";
-import { User } from "@repo/proto/user/user_pb.ts";
+import { FlowService } from "@repo/proto/gen/flow/flow_connect";
+import { Flow } from "@repo/proto/gen/flow/flow_pb";
+import { User } from "@repo/proto/gen/user/user_pb";
 import { useClient } from "../hooks/useClient";
 
 function App(): JSX.Element {

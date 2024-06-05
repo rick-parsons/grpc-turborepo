@@ -6,7 +6,7 @@ import { expressConnectMiddleware } from "@connectrpc/connect-express";
 import routes from "./connect";
 import { logger } from "./interceptors/logger";
 import swaggerUi from "swagger-ui-express";
-import docsJson from "@repo/proto/user/user.openapi.json";
+import docsJson from "@repo/proto/gen/user/user.openapi.json";
 
 const PORT = parseInt(process.argv[2] ?? 3020);
 const app = express();
