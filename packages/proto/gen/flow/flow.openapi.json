@@ -192,7 +192,7 @@
     },
     "securitySchemes": {
       "BasicAuth": {
-        "scheme": "bearer"
+        "scheme": "basic"
       }
     }
   },

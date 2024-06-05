@@ -12,7 +12,7 @@ option (gnostic.openapi.v3.document) = {
           value: {
             security_scheme: {
               type: "http";
-              scheme: "bearer";
+              scheme: "basic";
             }
           }
         }
