@@ -21,10 +21,17 @@ option (gnostic.openapi.v3.document) = {
   }
 };
 
+enum Status {
+  INACTIVE = 0;
+  LIVE = 1;
+}
+
 message Flow {
   int32 id = 1;
   string name = 2;
   optional string description = 3;
+  Status status = 4;
+  repeated string tags = 5;
 }
 
 message GetByIdRequest {

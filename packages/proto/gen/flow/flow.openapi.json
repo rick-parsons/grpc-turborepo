@@ -43,6 +43,14 @@
   },
   "components": {
     "schemas": {
+      "Status": {
+        "type": "string",
+        "title": "Status",
+        "enum": [
+          "INACTIVE",
+          "LIVE"
+        ]
+      },
       "Flow": {
         "type": "object",
         "properties": {
@@ -60,6 +68,17 @@
             "type": "string",
             "title": "description",
             "additionalProperties": false
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "title": "tags",
+              "additionalProperties": false
+            }
           }
         },
         "title": "Flow",
